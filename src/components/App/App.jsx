@@ -7,7 +7,7 @@ import PageThree from '../FormPages/FormPageThree.jsx';
 import PageFour from '../FormPages/FormPageFour.jsx';
 import PageFive from '../FormPages/FormPageFive.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-
+import Success from '../StatusPages/Success.jsx';
 
 function App() {
 
@@ -33,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/pageFive">
             <PageFive />
+        </Route>
+        <Route exact path="/Success">
+            <Success />
         </Route>
       </Router>
     </div>
