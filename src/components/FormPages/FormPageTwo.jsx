@@ -8,7 +8,7 @@ function PageTwo() {
 
 
 
-    const [inputTwo, setInputTwo] = useState(Number);
+    const [inputTwo, setInputTwo] = useState(String);
     const dispatch = useDispatch(); 
     const history = useHistory();
 

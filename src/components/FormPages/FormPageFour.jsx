@@ -29,7 +29,7 @@ function PageFour() {
 
         <div>
             <h1>Leave any comments you want to leave??</h1>            
-                    <label name="inputFour">Support?</label>
+                    <label name="inputFour">Comments?</label>
                     <input type="text"
                            name="inputFour"
                            value={inputFour}
