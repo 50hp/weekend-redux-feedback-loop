@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 function PageThree() {
 
-    const [inputThree, setInputThree] = useState();
+    const [inputThree, setInputThree] = useState(Number);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
@@ -28,15 +28,13 @@ function PageThree() {
 
         <div>
             <h1>How well are you being supported??</h1>            
-                <form onSubmit={(event)=>handleSubmit(event)}>
                     <label name="inputThree">Support?</label>
                     <input type="number"
                            name="inputThree"
                            value={inputThree}
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
-                    <button type="submit">Next</button>
-                </form>
+                    <button onClick={handleSubmit}>Next</button>
         </div> 
 
 

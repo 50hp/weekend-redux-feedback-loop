@@ -6,10 +6,14 @@ import PageTwo from '../FormPages/FormPageTwo.jsx';
 import PageThree from '../FormPages/FormPageThree.jsx';
 import PageFour from '../FormPages/FormPageFour.jsx';
 import PageFive from '../FormPages/FormPageFive.jsx';
+import Form from '../FormPages/Form.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Success from '../StatusPages/Success.jsx';
 
 function App() {
+        
+    let test = 'test';
+
 
   return (
     <div className='App'>
@@ -19,24 +23,14 @@ function App() {
       </header>
 
       <Router>
-        <Route exact path="/">
-            <PageOne />
-        </Route>
-        <Route exact path="/pageTwo">
-            <PageTwo /> 
-        </Route>
-        <Route exact path="/pageThree">
-            <PageThree /> 
-        </Route>
-        <Route exact path="/pageFour">
-            <PageFour />
-        </Route>
-        <Route exact path="/pageFive">
-            <PageFive />
-        </Route>
-        <Route exact path="/Success">
-            <Success />
-        </Route>
+        <form>
+            <Route exact path="/" component={PageOne}/>
+            <Route exact path="/pageTwo" component={PageTwo}/>
+            <Route exact path="/pageThree" component={PageThree}/>
+            <Route exact path="/pageFour" component={PageFour}/>
+            <Route exact path="/pageFive" component={PageFive}/>
+            <Route exact path="/Success" component={Success}/>
+        </form>   
       </Router>
     </div>
   );

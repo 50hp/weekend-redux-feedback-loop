@@ -8,7 +8,7 @@ function PageTwo() {
 
 
 
-    const [inputTwo, setInputTwo] = useState();
+    const [inputTwo, setInputTwo] = useState(Number);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
@@ -31,15 +31,13 @@ function PageTwo() {
 
         <div>
             <h1>How is your understanding the content??</h1>            
-                <form onSubmit={(event)=>handleSubmit(event)}>
                     <label name="inputTwo">Understanding?</label>
                     <input type="number"
                            name="inputTwo"
                            value={inputTwo}
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
-                    <button type="submit">Next</button>
-                </form>
+                    <button onClick={handleSubmit}>Next</button>
         </div> 
 
 
