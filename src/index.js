@@ -9,6 +9,8 @@ import logger from 'redux-logger';
 const pageOneReducer = (state = 0, action) => {
     if (action.type ==="PAGE_ONE") {
         return action.payload;
+    }else if (action.type === "RESET") {
+        return state = 0;
     }
     return state;
 };
@@ -16,6 +18,8 @@ const pageOneReducer = (state = 0, action) => {
 const pageTwoReducer = (state = 0, action) => {
     if (action.type ==="PAGE_TWO") {
         return action.payload;
+    }else if (action.type === "RESET") {
+        return state = 0;
     }
     return state;
 };
@@ -23,6 +27,8 @@ const pageTwoReducer = (state = 0, action) => {
 const pageThreeReducer = (state = 0, action) => {
     if (action.type ==="PAGE_THREE") {
         return action.payload;
+    }else if (action.type === "RESET") {
+        return state = 0;
     }
     return state;
 };
@@ -30,6 +36,8 @@ const pageThreeReducer = (state = 0, action) => {
 const pageFourReducer = (state = '', action) => {
     if (action.type === "PAGE_FOUR") {
         return action.payload;
+    }else if (action.type === "RESET") {
+        return state = '';
     }
     return state;
 };
