@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 function PageFour() {
 
-    const [inputFour, setInputFour] = useState('');
+    const [inputFour, setInputFour] = useState(String);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
@@ -29,15 +29,13 @@ function PageFour() {
 
         <div>
             <h1>Leave any comments you want to leave??</h1>            
-                <form onSubmit={(event)=>handleSubmit(event)}>
                     <label name="inputFour">Support?</label>
                     <input type="text"
                            name="inputFour"
                            value={inputFour}
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
-                    <button type="submit">Next</button>
-                </form>
+                    <button onClick={handleSubmit}>Next</button>
         </div> 
 
 

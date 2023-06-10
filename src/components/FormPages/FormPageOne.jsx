@@ -4,8 +4,7 @@ import {useState} from 'react';
 
 
 function PageOne() {
-    
-    const [inputOne, setInputOne] = useState();
+    let [inputOne, setInputOne] = useState();
     const dispatch = useDispatch(); 
     const history = useHistory();
 
@@ -28,15 +27,13 @@ function PageOne() {
 
         <div>
             <h1>How are you feeling today??</h1>            
-                <form onSubmit={(event)=>handleSubmit(event)}>
                     <label name="inputOne">Feeling?</label>
                     <input type="number"
                            name="inputOne"
                            value={inputOne}
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
-                    <button type="submit">Next</button>
-                </form>
+                    <button onClick={handleSubmit}>Next</button>
         </div> 
 
 
