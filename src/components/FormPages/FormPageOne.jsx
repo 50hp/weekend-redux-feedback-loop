@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 
 function PageOne() {
-    let [inputOne, setInputOne] = useState();
+    const [inputOne, setInputOne] = useState(String);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
@@ -31,6 +31,7 @@ function PageOne() {
                     <input type="number"
                            name="inputOne"
                            value={inputOne}
+                           placeholder="Ener a number"
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
                     <button onClick={handleSubmit}>Next</button>

@@ -2,6 +2,7 @@ import {useHistory} from 'react-router-dom';
 
 
 function Success() {
+
         const handleNav = () => {
 
 
@@ -13,7 +14,7 @@ function Success() {
             
 
 
-        <button onclick={handleNav}>Leave New Feedback</button>
+        <button onClick={handleNav}>Leave New Feedback</button>
 
 
 

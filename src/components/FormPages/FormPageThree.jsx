@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 function PageThree() {
 
-    const [inputThree, setInputThree] = useState(Number);
+    const [inputThree, setInputThree] = useState(String);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
