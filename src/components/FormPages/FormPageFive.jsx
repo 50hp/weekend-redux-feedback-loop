@@ -1,14 +1,15 @@
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import Item from './PageFiveComonents/Item.jsx';
 
 function PageFive() {
     
     const review = useSelector(store => store);
     const history = useHistory(); 
-    const handleSubmit = () => {
-           
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
         axios.post('/feedback', review)
         .then(response => {
             console.log('successful post');     
@@ -23,19 +24,25 @@ function PageFive() {
         
         <div>
             <h1>Review Your Feedback</h1>
-            <p>Feelings: {review.pageOneReducer}</p>
-            <p>Understanding: {review.pageTwoReducer}</p>
-            <p>Support: {review.pageThreeReducer}</p>
-            <p>Comments: {review.pageFourReducer}</p> 
-
-            <button onClick={handleSubmit}>Submit</button>
-
+            <Item value={review.pageOneReducer}
+                  title={"Feeling:  "}
+                  type={"number"}
+                  action={"PAGE_ONE"}/>
+            <Item value={review.pageTwoReducer}
+                  title={"Understanding:  "}
+                  type={"number"}
+                  action={"PAGE_TWO"}/>
+            <Item value={review.pageThreeReducer}
+                  title={"Support:  "}
+                  type={"number"}
+                  action={"PAGE_THREE"}/>
+            <Item value={review.pageFourReducer}
+                  title={"Comments:  "}
+                  type={"text"}
+                  action={"PAGE_FOUR"}/>
+            <button onClick={(event) => handleSubmit(event)}>Submit</button>
         </div>
-
-
-     
     );
-
 }
 
 export default PageFive;

@@ -1,12 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import PageOne from '../FormPages/FormPageOne.jsx';
+import Page from '../FormPages/FormPage.jsx';
 import PageTwo from '../FormPages/FormPageTwo.jsx';
 import PageThree from '../FormPages/FormPageThree.jsx';
 import PageFour from '../FormPages/FormPageFour.jsx';
 import PageFive from '../FormPages/FormPageFive.jsx';
-import Form from '../FormPages/Form.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Success from '../StatusPages/Success.jsx';
 
@@ -24,7 +23,10 @@ function App() {
 
       <Router>
         <form>
-            <Route exact path="/" component={PageOne}/>
+            <Route exact path="/">
+                <Page />
+            </Route>
+
             <Route exact path="/pageTwo" component={PageTwo}/>
             <Route exact path="/pageThree" component={PageThree}/>
             <Route exact path="/pageFour" component={PageFour}/>
