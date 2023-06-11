@@ -1,7 +1,8 @@
 import {useState} from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-
 
 function Item(props) {
    
@@ -26,29 +27,38 @@ function Item(props) {
     return ( 
 
 
-        <div>
-                <label name="reviewInput">{props.title}</label>
+        <div className="reviewBox">
                 { edit.clickState ? (
                <span> 
-                    <input type={props.type}
-                        className="reviewFormInput"
-                        name="reviewInput"
-                        value={value}
-                        onChange={(e) => handleChange(e.target.value)}
-                        required
-                        />
-                    <button onClick={(event)=>handleEdit(event)}>{edit.text}</button>
+                    <TextField type={props.type}
+                               className="reviewFormInput"
+                               label={props.title}
+                               name="reviewInput"
+                               value={value}
+                               onChange={(e) => handleChange(e.target.value)}
+                               size="small"
+                               margin="dense"
+                               color="warning"
+                               focused
+                               required
+                               />
+                    <Button onClick={(event)=>handleEdit(event)}>{edit.text}</Button>
                 </span> 
                 ) : (
                 <span>
-                    <input type={props.type}
-                            className="reviewFormInput"
-                            name="reviewInput"
-                            value={value}
-                            readOnly
-                            required
-                            />
-                    <button onClick={(event)=>handleEdit(event)}>{edit.text}</button>
+                    <TextField type={props.type}
+                               className="reviewFormInput"
+                               label={props.title}
+                               name="reviewInput"
+                               value={value}
+                               readOnly
+                               size="small"
+                               margin="dense"
+                               color="success"
+                               focused
+                               required
+                               />
+                    <Button onClick={(event)=>handleEdit(event)}>{edit.text}</Button>
                 </span> 
                 )}
                  
