@@ -24,6 +24,18 @@ router.post('/', (req,res) => {
 });
 
 
+router.get('/', (req,res) =>{
+    const queryText = `SELECT * FROM "feedback" ORDER BY date ASC`;
+    
+    pool.query(queryText)
+    .then(result => {
+        res.send(result.rows);
+        console.log('get request');
+    }).catch(error => {
+        res.sendStatus(500);
+        console.log('error with query', queryText);
+    });
+});
 
 
 

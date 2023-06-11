@@ -59,14 +59,7 @@ function Page({nextPath, prePath, type, kind, question, label, page}) {
                            required/>
                     <button onClick={handleSubmit}>Next</button>
         </div> 
-
-
-
-
     );
-
-
-
 }
 
 export default Page;
