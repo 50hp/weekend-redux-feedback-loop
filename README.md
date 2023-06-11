@@ -5,7 +5,7 @@
 
 Duration: Weekend Project
 
-Problem: Create a gallery web app that uses React. 
+Problem: Create a feedback protal using React, Redux and the full stack.
 
 
 
