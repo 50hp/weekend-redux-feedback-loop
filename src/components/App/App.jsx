@@ -5,11 +5,9 @@ import Page from '../FormPages/FormPage.jsx';
 import PageFive from '../FormPages/FormPageFive.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Success from '../StatusPages/Success.jsx';
+import AdminPanel from '../AdminPanel/AdminPanel.jsx';
 
 function App() {
-        
-    let test = 'test';
-
 
   return (
     <div className='App'>
@@ -28,7 +26,6 @@ function App() {
                       label={"Feeling? "}
                       page={"ONE"}/>
             </Route>
-
             <Route exact path="/pageTwo">
                 <Page nextPath={"/pageThree"}
                       prePath={"/"}
@@ -58,6 +55,7 @@ function App() {
             </Route>
             <Route exact path="/pageFive" component={PageFive}/>
             <Route exact path="/Success" component={Success}/>
+            <Route exact path="/admin" component={AdminPanel}/>
         </form>   
       </Router>
     </div>
