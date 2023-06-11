@@ -31,7 +31,9 @@ Problem: Create a feedback protal using React, Redux and the full stack.
    `pool.js`
 6. Run `npm start`
 
-
+## Screenshots
+![screenshot](home.png)
+![screenshot](table_example.png)
 
 ## Acknowledgments
 
