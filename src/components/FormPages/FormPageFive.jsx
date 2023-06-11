@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Item from './PageFiveComonents/Item.jsx';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 function PageFive() {
     
@@ -23,7 +24,7 @@ function PageFive() {
 
     return(
         
-        <div>
+        <Box>
             <span>
                 <Button onClick={()=>history.push('/pageFour')}>Back</Button>
             </span> 
@@ -46,7 +47,7 @@ function PageFive() {
                   type={"text"}
                   action={"PAGE_FOUR"}/>
             <Button onClick={(event) => handleSubmit(event)}>Submit</Button>
-        </div>
+        </Box>
     );
 }
 

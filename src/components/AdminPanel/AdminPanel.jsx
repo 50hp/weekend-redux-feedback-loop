@@ -2,6 +2,12 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import TableItem from './TableItem/TableItem.jsx';
 import Button from '@mui/material/Button';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 function AdminPanel() {
    
@@ -45,32 +51,32 @@ function AdminPanel() {
 
 
     return (
-        <div>
-            <table className="adminTable">
-                <thead>
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Comprehension</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Status</th>
-                        <th>Date</th>
-                        <th>Flag</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <TableContainer>
+            <Table className="adminTable">
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center">Feeling</TableCell>
+                        <TableCell align="center">Comprehension</TableCell>
+                        <TableCell align="center">Support</TableCell>
+                        <TableCell align="center">Comments</TableCell>
+                        <TableCell align="center">Status</TableCell>
+                        <TableCell align="center">Date</TableCell>
+                        <TableCell align="center">Flag</TableCell>
+                        <TableCell align="center">Delete</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
                     { tableItems.map(item => (
-                       <tr key={item.id}>     
+                       <TableRow key={item.id}>     
                             <TableItem item={item}
                                        putFeedback={putFeedback}
                                        deleteFeedback={deleteFeedback}
                                        />
-                        </tr>
+                        </TableRow>
                     ))}
-                </tbody>
-            </table>
-        </div>
+                </TableBody>
+            </Table>
+        </TableContainer>
 
 
     );
