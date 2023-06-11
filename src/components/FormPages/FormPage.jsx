@@ -1,35 +1,60 @@
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
-function Page({nextPath, type, question, label}) {
+function Page({nextPath, prePath, type, kind, question, label, page}) {
+    const review = useSelector(store => store);
 
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(String);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
 
     const handleChange = (value) => {
-            setInputOne(value);
+            setInput(value);
     };
 
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        dispatch({type:type, payload: inputOne});
+        if (input === '' ){
+            alert('fill input');
+            return;
+        }
+        dispatch({type:type, payload: input});
         history.push(nextPath);
     };
 
+    useEffect(() => {
+    switch (page) {
+        case 'ONE':
+           setInput(review.pageOneReducer);
+            break;
+        case 'TWO':
+            setInput(review.pageTwoReducer);
+            break;
+        case 'THREE':
+            setInput(review.pageThreeReducer);
+            break;
+        case 'FOUR':
+            setInput(review.pageFourReducer);
+            break;
+        default:
+            break;
+    }
+    }, []);
 
     return(
 
         <div>
-            <h1>{question}</h1>            
+            <span>
+             {prePath ? (<button onClick={()=>history.push(prePath)}>Back</button>):(<></>)}
+            </span> 
+             <h1>{question}</h1>           
                     <label name="input">{label}</label>
-                    <input type="number"
+                    <input type={kind}
                            name="input"
                            value={input}
-                           placeholder="Ener a number"
                            onChange={(e) => handleChange(e.target.value)}
                            required/>
                     <button onClick={handleSubmit}>Next</button>
