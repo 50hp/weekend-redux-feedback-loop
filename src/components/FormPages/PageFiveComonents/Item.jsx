@@ -8,11 +8,12 @@ function Item(props) {
    
     const dispatch = useDispatch();
     const [value, setValue] = useState(props.value)
+    const [edit, setEdit] = useState({clickState:false, text:'Edit'});
+    
     const handleChange = (target) => {
        setValue(target);
     } 
-    
-    const [edit, setEdit] = useState({clickState:false, text:'Edit'});
+
     const handleEdit = (event) => {
         event.preventDefault();
         if (edit.clickState) {
@@ -23,7 +24,7 @@ function Item(props) {
         }
     }
     
-
+//color coded inputs for state 
     return ( 
 
 

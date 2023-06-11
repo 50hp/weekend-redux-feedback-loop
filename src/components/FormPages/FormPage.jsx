@@ -8,21 +8,21 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
 function Page({nextPath, prePath, type, kind, question, label, page}) {
-    const review = useSelector(store => store);
 
+    const review = useSelector(store => store);
     const [input, setInput] = useState(String);
     const [filled, setFilled] = useState(true);
     const dispatch = useDispatch(); 
     const history = useHistory();
 
-
     const handleChange = (value) => {
             setInput(value);
     };
 
+//checks input for value
     const handleSubmit = (event) => {
         event.preventDefault(); 
-        if (input === '' ){
+        if ( input === '' ) {
             setFilled(false);
             return;
         }
@@ -30,6 +30,7 @@ function Page({nextPath, prePath, type, kind, question, label, page}) {
         history.push(nextPath);
     };
 
+    //finds the stored value for the page
     useEffect(() => {
     switch (page) {
         case 'ONE':

@@ -2,14 +2,16 @@ import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import Button from '@mui/material/Button';
 import Header from '../Headers/Header.jsx';
-function Success() {
-        const dispatch = useDispatch();
-        const history = useHistory();
 
-        const handleNav = () => {
-            dispatch({type:"RESET"});
-            history.push('/'); 
-        }
+function Success() {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleNav = () => {
+        dispatch({type:"RESET"});
+        history.push('/'); 
+    }
 
     return(
             <div>

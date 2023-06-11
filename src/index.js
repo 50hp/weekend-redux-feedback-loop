@@ -6,6 +6,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+// Note refactor reducers into one?
 const pageOneReducer = (state = String, action) => {
     if (action.type ==="PAGE_ONE") {
         return action.payload;

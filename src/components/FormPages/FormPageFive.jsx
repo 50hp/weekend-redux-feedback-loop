@@ -11,6 +11,8 @@ function PageFive() {
     
     const review = useSelector(store => store);
     const history = useHistory(); 
+
+//axios get request
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -22,7 +24,7 @@ function PageFive() {
             console.log('error with post', err);
         });            
 
-    }
+    };
 
     return(
 

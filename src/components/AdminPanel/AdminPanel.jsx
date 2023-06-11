@@ -13,7 +13,8 @@ import TableRow from '@mui/material/TableRow';
 function AdminPanel() {
    
     const [tableItems, setTableItems] = useState([]);
-    
+
+//axios get request
     const getFeedback = () => {
         axios.get('/feedback')
         .then(res => {
@@ -23,6 +24,7 @@ function AdminPanel() {
         });
     }; 
 
+//axios put request sends current status of flag
     const putFeedback = (id, status) => {
         axios.put('/feedback/' + id, {status})
         .then(res => {
@@ -33,6 +35,7 @@ function AdminPanel() {
         });
     };
 
+//axios delete request
     const deleteFeedback = (id) => { 
         axios.delete('/feedback/' + id)
         .then(res => {
@@ -43,13 +46,9 @@ function AdminPanel() {
         });
     };
 
-
     useEffect(()=>{
         getFeedback();
     }, []);
-
-    console.log(tableItems);
-
 
     return (
         <div>
