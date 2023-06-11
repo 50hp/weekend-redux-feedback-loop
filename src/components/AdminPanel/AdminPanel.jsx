@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
-
+import TableItem from './TableItem/TableItem.jsx';
 
 function AdminPanel() {
    
@@ -16,7 +16,7 @@ function AdminPanel() {
     }; 
 
     const putFeedback = (id) => {
-        axios.put('/feedback' + id)
+        axios.put('/feedback/' + id)
         .then(res => {
             console.log('successful put on id:', id);
             getFeedback();
@@ -26,7 +26,7 @@ function AdminPanel() {
     };
 
     const deleteFeedback = (id) => { 
-        axios.delete('/feedback' + id)
+        axios.delete('/feedback/' + id)
         .then(res => {
             console.log('successful delete on id:', id);
             getFeedback();
@@ -44,8 +44,28 @@ function AdminPanel() {
 
     return (
         <div>
-            <p>asdlkfjasd;lfkj</p>
-
+            <table className="adminTable">
+                <thead>
+                    <tr>
+                        <th>Feeling</th>
+                        <th>Comprehension</th>
+                        <th>Support</th>
+                        <th>Comments</th>
+                        <th>Flag</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    { tableItems.map(item => (
+                       <tr key={item.id}>     
+                            <TableItem item={item}
+                                       putFeedback={putFeedback}
+                                       deleteFeedback={deleteFeedback}
+                                       />
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
 
 
