@@ -15,8 +15,8 @@ function AdminPanel() {
         });
     }; 
 
-    const putFeedback = (id) => {
-        axios.put('/feedback/' + id)
+    const putFeedback = (id, status) => {
+        axios.put('/feedback/' + id, {status})
         .then(res => {
             console.log('successful put on id:', id);
             getFeedback();
@@ -42,6 +42,7 @@ function AdminPanel() {
 
     console.log(tableItems);
 
+
     return (
         <div>
             <table className="adminTable">
@@ -51,6 +52,8 @@ function AdminPanel() {
                         <th>Comprehension</th>
                         <th>Support</th>
                         <th>Comments</th>
+                        <th>Status</th>
+                        <th>Date</th>
                         <th>Flag</th>
                         <th>Delete</th>
                     </tr>
