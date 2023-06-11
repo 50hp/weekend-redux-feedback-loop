@@ -1,4 +1,4 @@
-
+import Button from '@mui/material/Button';
 
 function TableItem({item, putFeedback, deleteFeedback}) {
 
@@ -10,8 +10,8 @@ function TableItem({item, putFeedback, deleteFeedback}) {
             <td>{item.comments}</td>
             <td>{String(item.flagged)}</td>
             <td>{item.date}</td>
-            <td><button onClick={()=> putFeedback(item.id, item.flagged)}>Flagg</button></td>
-            <td><button onClick={()=> deleteFeedback(item.id)}>Delete</button></td>
+            <td><Button onClick={()=> putFeedback(item.id, item.flagged)}>Flag</Button></td>
+            <td><Button onClick={()=> deleteFeedback(item.id)}>Delete</Button></td>
         </>
     );
 }

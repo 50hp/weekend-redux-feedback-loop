@@ -6,10 +6,13 @@ import PageFive from '../FormPages/FormPageFive.jsx';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Success from '../StatusPages/Success.jsx';
 import AdminPanel from '../AdminPanel/AdminPanel.jsx';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
 
   return (
+
+    <CssBaseline>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
@@ -59,6 +62,7 @@ function App() {
         </form>   
       </Router>
     </div>
+    </CssBaseline>
   );
 }
 

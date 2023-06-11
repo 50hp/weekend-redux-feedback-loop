@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
+import Button from '@mui/material/Button';
 
 function Success() {
         const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function Success() {
     return(
             <div>
                     <h2>Thank You!</h2>
-                    <button onClick={handleNav}>Leave New Feedback</button>
+                    <Button onClick={handleNav}>Leave New Feedback</Button>
             </div>
     );
 }

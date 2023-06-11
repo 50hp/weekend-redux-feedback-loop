@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Item from './PageFiveComonents/Item.jsx';
+import Button from '@mui/material/Button';
 
 function PageFive() {
     
@@ -24,7 +25,7 @@ function PageFive() {
         
         <div>
             <span>
-                <button onClick={()=>history.push('/pageFour')}>Back</button>
+                <Button onClick={()=>history.push('/pageFour')}>Back</Button>
             </span> 
  
             <h1>Review Your Feedback</h1>
@@ -44,7 +45,7 @@ function PageFive() {
                   title={"Comments:  "}
                   type={"text"}
                   action={"PAGE_FOUR"}/>
-            <button onClick={(event) => handleSubmit(event)}>Submit</button>
+            <Button onClick={(event) => handleSubmit(event)}>Submit</Button>
         </div>
     );
 }

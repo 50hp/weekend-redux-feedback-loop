@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Button from '@mui/material/Button';
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 
@@ -26,7 +27,7 @@ function Item(props) {
     return ( 
 
 
-        <div>
+        <div className="reviewBox">
                 <label name="reviewInput">{props.title}</label>
                 { edit.clickState ? (
                <span> 
@@ -37,7 +38,7 @@ function Item(props) {
                         onChange={(e) => handleChange(e.target.value)}
                         required
                         />
-                    <button onClick={(event)=>handleEdit(event)}>{edit.text}</button>
+                    <Button onClick={(event)=>handleEdit(event)}>{edit.text}</Button>
                 </span> 
                 ) : (
                 <span>
@@ -48,7 +49,7 @@ function Item(props) {
                             readOnly
                             required
                             />
-                    <button onClick={(event)=>handleEdit(event)}>{edit.text}</button>
+                    <Button onClick={(event)=>handleEdit(event)}>{edit.text}</Button>
                 </span> 
                 )}
                  
