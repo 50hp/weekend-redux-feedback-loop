@@ -11,7 +11,15 @@ Problem: Create a feedback protal using React, Redux and the full stack.
 
 ## Built With
 
-    Node JS Express Body Parser React Redux Material UI Axios PG PostgreSQL
+    Node JS 
+    Express 
+    Body Parser 
+    React 
+    Redux 
+    Material UI 
+    Axios 
+    PG 
+    PostgreSQL
 
 ## Installation
 
